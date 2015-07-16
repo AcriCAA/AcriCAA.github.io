@@ -17,7 +17,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYWNyaWNhYSIsImEiOiJjZWJhNTk4YzFiODZmNTdlZDg5ZGE3NTFhZmI2ZmUwOSJ9.haw7ETdkg_W2acjYWgZ9Rg';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([38.1089, 13.3545], 15);
+    .setView([39.972, -75.089], 15);
 
 // As with any other AJAX request, this technique is subject to the Same Origin Policy:
 // http://en.wikipedia.org/wiki/Same_origin_policy
@@ -25,6 +25,10 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 // delivering it should support CORS.
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('https://api.phila.gov/bike-share-stations/v1')
+    .addTo(map);
+    
+    var featureLayer2 = L.mapbox.featureLayer()
+    .loadURL("http://acricaa.github.io/trips.geojson")
     .addTo(map);
 </script>
 </body>
